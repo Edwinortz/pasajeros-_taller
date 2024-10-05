@@ -1,0 +1,18 @@
+void registrar() {
+    aux = new nodo;
+    cout << "Nombre: ";
+    cin >> aux->nombre;
+    cout << "Documento: ";
+    cin >> aux->documento;
+    cout << "Destino (1: La Bocana, 2: Piangüita, 3: Ladrilleros): ";
+    cin >> aux->destino;
+    aux->sig = NULL;
+    if(!cab) {
+        cab = aux;
+    } else {
+        aux2 = cab;
+        while(aux2->sig != NULL) {
+            aux2 = aux2->sig;
+        }
+        aux2->sig = aux;
+    }
