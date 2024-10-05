@@ -1,0 +1,26 @@
+void mostrar() {
+    aux = cab;
+    if (aux == NULL) {
+        cout << "No hay pasajeros registrados." << endl;
+        return;
+    }
+    cout << "Lista de pasajeros:" << endl;
+    while(aux != NULL) {
+        cout << "Nombre: " << aux->nombre << ", Documento: " << aux->documento << ", Destino: " << aux->destino << " - ";
+        switch(aux->destino) {
+            case 1:
+                cout << "La Bocana";
+                break;
+            case 2:
+                cout << "Piangüita";
+                break;
+            case 3:
+                cout << "Ladrilleros";
+                break;
+            default:
+                cout << "Desconocido";
+        }
+        cout << endl;
+        aux = aux->sig;
+    }
+}
