@@ -1,0 +1,29 @@
+void ordenar() {
+    int tempDoc, tempDest;
+    char tempNombre[70];
+    aux2 = cab;
+    while(aux2->sig != NULL) {
+        aux = cab;
+        while(aux->sig != NULL) {
+            if(aux->destino > aux->sig->destino || 
+               (aux->destino == aux->sig->destino && aux->documento > aux->sig->documento)) {
+                //* para los destino
+                tempDest = aux->destino;
+                aux->destino = aux->sig->destino;
+                aux->sig->destino = tempDest;
+                
+                //* para Intercambiar documento
+                tempDoc = aux->documento;
+                aux->documento = aux->sig->documento;
+                aux->sig->documento = tempDoc;
+                
+                //* para los nombres
+                strcpy(tempNombre, aux->nombre);
+                strcpy(aux->nombre, aux->sig->nombre);
+                strcpy(aux->sig->nombre, tempNombre);
+            }
+            aux = aux->sig;
+        }
+        aux2 = aux2->sig;
+    }
+}
